@@ -17,7 +17,7 @@ The project demonstrates displaying strings, controlling the backlight, enabling
 - ST-LINK driver (for programming the Nucleo board)
 - I2C LCD driver library (`lcd_i2c.c`, `lcd_i2c.h`)
 
-## 🔄 Code Flow
+## Code Flow
 1. Initialize system clock and peripherals.
 2. Configure I2C in STM32CubeMX with correct SDA and SCL pins (e.g., `PB7` for SDA, `PB6` for SCL).
 3. Initialize LCD with correct address (e.g., `0x27` or `0x3F`) and mode (4-bit). (Read appropriate datasheet)
