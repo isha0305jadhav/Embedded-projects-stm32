@@ -1,0 +1,13 @@
+  LED Blink on STM32 Nucleo
+1. Goal The aim of this project was to make the onboard LED of the STM32 Nucleo board blink at a fixed interval. 
+2. Required Tools
+Hardware:
+STM32 Nucleo development board (e.g., Nucleo-F446RE)
+Micro-USB cable
+Software:
+STM32CubeIDE (includes STM32CubeMX for pin and peripheral configuration)
+Learning Outcomes
+Understood how to use STM32CubeIDE to configure microcontroller peripherals.
+Learned the basics of GPIO pin control.
+Got hands-on practice with the build–flash–test cycle for embedded systems.
+Understood how HAL functions work for hardware abstraction.
