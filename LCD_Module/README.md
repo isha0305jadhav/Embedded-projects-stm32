@@ -33,7 +33,7 @@ The project demonstrates displaying strings, controlling the backlight, enabling
 - I2C Protocol Basics:
   - Device addressing.
   - Data and command modes.
-- CGRAM (Character Generator RAM)** for creating custom symbols.
+- CGRAM (Character Generator RAM)for creating custom symbols.
 - Timing Requirements:
   LCD commands require specific delays (in microseconds or milliseconds) to execute.
 - I2C Command Sequence:
