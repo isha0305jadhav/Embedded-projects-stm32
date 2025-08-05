@@ -19,8 +19,8 @@ The project demonstrates displaying strings, controlling the backlight, enabling
 
 ## Code Flow
 1. Initialize system clock and peripherals.
-2. Configure I2C in STM32CubeMX with correct SDA and SCL pins (e.g., `PB7` for SDA, `PB6` for SCL).
-3. Initialize LCD with correct address (e.g., `0x27` or `0x3F`) and mode (4-bit). (Read appropriate datasheet)
+2. Configure I2C in STM32CubeMX with correct SDA and SCL pins ( PB8 for SDA, PB9 for SCL).
+3. Initialize LCD with correct address (0x27) and mode (4-bit). (Read appropriate datasheet for address)
 4. Main Operations:
    - Display static strings.
    - Turn backlight ON/OFF using I2C commands.
