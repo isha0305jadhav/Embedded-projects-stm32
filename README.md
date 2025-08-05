@@ -1,2 +1,7 @@
 # Embedded-projects-stm32
-STM32-NUCLEO board different projects
+
+In this Repository you will find different types of projects with STM-32 Nucleo Board 
+LED Blinking
+Interface LCD module using I2C protocol
+In-built RTC configuartion
+Basic usage of timer.
