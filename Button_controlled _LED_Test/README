@@ -1,0 +1,15 @@
+The goal of this project is to control the onboard LED of an STM32 Nucleo board using a push button.  
+When the button is pressed, the LED turns ON; when released, the LED turns OFF.  
+This project demonstrates GPIO input and output configuration in STM32CubeIDE.
+Hardware Requirements
+- STM32 Nucleo development board (e.g., Nucleo-F446RE)
+- Micro-USB cable
+Software Requirements
+- STM32CubeIDE (includes STM32CubeMX)
+- ST-LINK driver (for programming the Nucleo board)
+
+  Learning Outcomes
+- Configure GPIO pins for input and output in STM32CubeIDE.
+- Understand the basics of reading digital inputs.
+- Control outputs based on user interaction.
+- Learn about button debouncing.
