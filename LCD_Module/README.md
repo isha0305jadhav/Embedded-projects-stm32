@@ -60,5 +60,6 @@ The project demonstrates displaying strings, controlling the backlight, enabling
   - Not adding proper delays between commands caused partial or corrupted displays.
 - Custom Character Storage:
   - Misunderstanding CGRAM addressing led to incorrect symbols being shown.
+## results
 
 
