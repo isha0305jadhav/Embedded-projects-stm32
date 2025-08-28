@@ -1,64 +1,85 @@
-A simple embedded project that interfaces an HD44780-compatible 16×2 LCD (via I²C backpack) with an STM32 Nucleo board. It demonstrates I²C communication and timer-based periodic updates (e.g., refreshing text every fixed interval or driving a non-blocking heartbeat).
-Objective:
-Interface a 16×2 LCD to an STM32 Nucleo using I²C and display text/numbers. Use an STM32 hardware timer to trigger periodic, non-blocking tasks (e.g., update a counter or sensor reading every 500 ms).
-Practice clean HAL-based peripheral configuration, modular driver design, and basic embedded timing techniques.
+**STM32 Nucleo – I²C LCD Module with Timer**
+**Goal**
+Interface a 16×2 HD44780-compatible LCD with an STM32 Nucleo board using the I²C protocol.Demonstrate I²C communication and timer-based periodic updates, such as refreshing text every fixed interval
 
-Hardware Required
+**Hardware Requirements**
 
-STM32 Nucleo board (e.g., NUCLEO-F446RE)
+- STM32 Nucleo development board (e.g., NUCLEO-F446RE)
 
-16×2 LCD with I²C backpack (PCF8574)
+- 16×2 LCD module with I²C backpack (PCF8574 or similar)
 
-USB cable for programming
+- Micro-USB cable (for power + programming)
 
-Connections:
+- Jumper wires
 
-LCD VCC → Nucleo 5V (or 3.3V if your backpack supports it)
+**Connections:**
 
-LCD GND → GND
+- LCD VCC → Nucleo 5V (or 3.3V if backpack supports it)
 
-LCD SDA → SDA (PB9)
+- LCD GND → GND
 
-LCD SCL → SCL (PB8)
+- LCD SDA → PB9
 
-Software Required
+- LCD SCL → PB8
 
-STM32CubeIDE (HAL drivers)
+**Software Requirements**
 
-ST-Link (bundled with Nucleo for flashing/debug)
+- STM32CubeIDE (includes STM32CubeMX and HAL drivers)
 
- Build & Run
+- ST-LINK driver (bundled with Nucleo boards)
 
-Enable I²C (e.g., I2C1)
+**Code Flow**
 
-Mode: I²C
+- Initialize system clock and peripherals.
 
-Speed: 100 kHz or 400 kHz
+- Configure I²C1 in STM32CubeMX:
 
-Pins: SDA (PB9), SCL (PB8)
+- Mode: I²C
 
-Enable TIM2 (or any general-purpose timer)
+- SDA: PB9
 
-Prescaler/Period → e.g., 1 kHz tick or 500 ms interrupt
+- SCL: PB8
 
-Timer:
+- Speed: 100 kHz / 400 kHz
 
-Configure a hardware timer to generate an interrupt at a fixed rate (e.g., every 1 ms or 500 ms).
+- Configure TIM2 (general-purpose timer):
 
-In the ISR callback, set a flag or increment a software counter.
+- Prescaler/Period to achieve 1 kHz tick or 500 ms interrupt
 
-In the main loop, act on the flag to update the LCD 
+- Write ISR callback:
 
-Learning Outcomes
+- In HAL_TIM_PeriodElapsedCallback, set a flag or increment a counter.
 
-Configure and use I²C on STM32 with the HAL.
+- In the main loop, act on this flag to update the LCD.
 
-Understand LCD command flow over I²C (PCF8574 → HD44780).
+- Display text/numbers on the LCD using I²C commands.
+
+**Necessary Reading / Considerations**
+
+Basics of I²C protocol: addressing, data vs. command modes.
+
+HD44780 command set for LCD control.
+
+Timer calculations for STM32 (prescaler + period).
+
+ISR design principle: keep ISRs short, defer work to while(1).
+
+ **Learning Outcomes**
+
+Configure and use I²C on STM32 with the HAL library.
+
+Understand LCD command flow (PCF8574 → HD44780).
 
 Implement timer-driven, non-blocking periodic tasks.
 
-Challenges:
-Implement ISR and working with timer-(timer calculations)
+Apply clean HAL-based peripheral initialization.
 
-Do Less in ISRs: Only set flags or counters in timer callbacks; do I²C/LCD writes in while(1).
+Strengthen debugging skills for embedded I²C communication.
 
+**Challenges**
+
+Timer Calculations: Computing correct prescaler/period values for precise timing.
+
+Interrupt Handling: Keeping ISRs lightweight and deferring LCD updates to main loop.
+
+Glitches with Delays: Improper delay handling can cause partial or corrupted LCD output.
