@@ -36,3 +36,5 @@ The goal of this project is to use the STM32’s internal Real-Time Clock (RTC) 
   - `HAL_RTC_GetDate()`
 - Formatting time and date for human-readable output.
 - Integrating RTC with an LCD for real-time display.
+## Results
+Attched as .mp4 file
