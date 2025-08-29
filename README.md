@@ -5,3 +5,5 @@ LED Blinking
 Interface LCD module using I2C protocol
 In-built RTC configuartion
 Basic usage of timer.
+
+**#All Output Videos or results are attached in respetive folder with .mp file extension**
