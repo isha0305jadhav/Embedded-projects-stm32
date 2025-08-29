@@ -83,3 +83,6 @@ Timer Calculations: Computing correct prescaler/period values for precise timing
 Interrupt Handling: Keeping ISRs lightweight and deferring LCD updates to main loop.
 
 Glitches with Delays: Improper delay handling can cause partial or corrupted LCD output.
+
+**Results**
+Attched as .mp4 file
