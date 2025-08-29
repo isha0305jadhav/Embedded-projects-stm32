@@ -61,5 +61,4 @@ The project demonstrates displaying strings, controlling the backlight, enabling
 - Custom Character Storage:
   - Misunderstanding CGRAM addressing led to incorrect symbols being shown.
 ## results
-
-
+Attached as .mp4 file
