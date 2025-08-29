@@ -68,5 +68,6 @@ Voltage reference accuracy: ADC depends on stable Vref; fluctuations cause measu
 Formatting values: Converting float temperature values into LCD-friendly strings.
 
 Temperature drift: Sensor placement and self-heating may affect accuracy.
+
  **Results**
  Attched as .mp4 file
